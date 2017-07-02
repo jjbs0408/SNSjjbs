@@ -1,6 +1,18 @@
 <div class="card">
   <div class="card-content">
     <span class="card-title"><%= post.user.name %></span>
+      <%if user_signed_in? && current_user.id != post.user.id%>
+        <%if current_user.followings.include?(post.user)%>
+          <%=form_tag follow_path(post.user.id) ,method: :delete, class: "right" do%>
+          <button class="btn">팔로우 취소</button>
+          <% end %>
+        <%else%>
+          <%=form_tag follows_path, method: "post", class: "right" do%>
+          <input type="hidden" name="followed_id" value="<%=post.user.id%>">
+          <button class="btn">팔로우</button>
+          <% end %>
+        <%end%>
+      <%end%>
     <span><%= post.created_at %></span>
     <p class="pre-line"><%= post.content %></p>
   </div>

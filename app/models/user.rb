@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :follower_relations, foreign_key: "followed_id", class_name: "Follow"
   has_many :followers, through: :follower_relations, source: :follower
   # 내가 추종한 사람
-  has_many :following_relations, foreign_key: "follower_id", class_name: "follow"
+  has_many :following_relations, foreign_key: "follower_id", class_name: "Follow"
   has_many :followings, through: :following_relations, source: :followed
 
 
