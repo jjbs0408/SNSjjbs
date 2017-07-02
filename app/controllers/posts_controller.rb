@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :check_ownership, only: [:edit, :update, :destroy]
 
   def index
+
     @posts = Post.all.order('created_at desc')
     @posts_count = current_user.posts.length
   end
@@ -33,6 +34,18 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to '/'
   end
+  def followers
+
+  end
+
+  def followings
+
+  end
+  def likedusers
+    @post=Post.find(params[:id])
+
+  end
+
 
   private
 

@@ -1,0 +1,14 @@
+<style>
+  h2{
+    text-align:center;
+    font-family: Arial;
+    colof:red;
+  }
+</style>
+<div class="container">
+  <h2><%=current_user.name%>의 팔로워</h2>
+    <% current_user.followers.each do |f|%>
+    <p><%=f.name%></p>
+    <%end%>
+  <a href="/" class="btn right">돌아가기</a>
+</div>

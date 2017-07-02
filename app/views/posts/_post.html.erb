@@ -18,7 +18,7 @@
   </div>
 
   <div class="card-action">
-    <%=post.likes.size%> 명이 좋아합니다.
+    <a href="/likedusers/<%=post.id%>" style="margin-right:0px"><%=post.likes.size%></a> 명이 좋아합니다.
     <% if current_user.is_like?(post) %>
     <%=link_to "좋아요 취소", post_like_path(post),method: :post%>
     <%else%>

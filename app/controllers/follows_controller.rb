@@ -10,4 +10,5 @@ class FollowsController < ApplicationController
                    follower_id: current_user.id).destroy
     redirect_to :back
   end
+
 end

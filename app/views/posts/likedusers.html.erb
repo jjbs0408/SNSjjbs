@@ -1,0 +1,16 @@
+<style>
+  h2{
+    text-align:center;
+    font-family: Arial;
+    color:blue;
+  }
+</style>
+<div class="container">
+  <h2>좋아요 한 사람</h2>
+  <% @post.liked_users.each do |u|%>
+    <%=u.name%>
+  <% end %>
+  <a href="/" class="btn right">돌아가기</a>
+
+
+</div>

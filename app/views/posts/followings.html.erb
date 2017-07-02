@@ -1,0 +1,14 @@
+<style>
+  h2{
+    text-align:center;
+    text-colof:red;
+  }
+</style>
+<div class="container">
+  <h2><%=current_user.name%>의 팔로잉</h2>
+    <% current_user.followings.each do |f|%>
+      <p><%=f.name%></p>
+    <%end%>
+  <a href="/" class="btn right">돌아가기</a>
+
+</div>
